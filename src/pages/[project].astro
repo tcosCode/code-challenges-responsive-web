@@ -1,0 +1,32 @@
+---
+import type { GetStaticPaths } from "astro";
+import { PROJECTS } from "@src/data.js";
+import Layout from "@src/layouts/Layout.astro";
+import HeaderProjects from "@components/HeaderProjects.astro";
+
+export const getStaticPaths = (() => {
+  return PROJECTS.map((project) => ({
+    params: {
+      project: project.slug,
+    },
+  }));
+}) satisfies GetStaticPaths;
+
+const { project } = Astro.params;
+---
+
+<Layout>
+  <iframe id="iframe" src={`/challenges/${project}/index.html`}></iframe>
+  <HeaderProjects />
+</Layout>
+
+<style>
+  iframe {
+    width: 100%;
+    min-height: 100dvh;
+    border: none;
+    overflow: hidden;
+    position: absolute;
+    display: block;
+  }
+</style>

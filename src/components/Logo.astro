@@ -1,0 +1,71 @@
+---
+import css from "@public/css.svg";
+---
+
+<div class="logo slide-in-bottom">
+  <div class="text">
+    <h1>code<span>challenges</span></h1>
+  </div>
+
+  <img src={css.src} alt="css logo" fetchpriority="high" />
+</div>
+
+<style>
+  .logo {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  h1 {
+    font-size: 6rem;
+    color: var(--font-color-light);
+    margin: 0;
+  }
+
+  span {
+    display: block;
+    font-size: 2.2rem;
+    margin-top: -2.5rem;
+    color: var(--secondary-color);
+    text-transform: uppercase;
+  }
+
+  img {
+    width: 130px;
+    height: auto;
+    rotate: -10deg;
+  }
+
+  .slide-in-bottom {
+    -webkit-animation: slide-in-bottom 1s both;
+    animation: slide-in-bottom 1s both;
+  }
+
+  @-webkit-keyframes slide-in-bottom {
+    0% {
+      -webkit-transform: translateY(50px);
+      transform: translateY(50px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  @keyframes slide-in-bottom {
+    0% {
+      -webkit-transform: translateY(50px);
+      transform: translateY(50px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+</style>

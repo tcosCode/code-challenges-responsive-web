@@ -1,22 +1,90 @@
+---
+
+---
+
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Code Challenge | Responsive Webs</title>
+  </head>
+  <body>
+    <slot />
+  </body>
 </html>
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
+<style is:global>
+  :root {
+    /* Colors */
+    --primary-color: #663399;
+    --primary-color-rgb: 102, 51, 153;
+    --secondary-color: #e44d27;
+    --secondary-color-light: #f1652a;
+    --font-color: #121826;
+    --font-color-light: #222936;
+    --gray: #e5e7eb;
+
+    /* Spacing */
+    --spacing-sm: 0.75rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 2.25rem;
+    --spacing-2xl: 4rem;
+    --spacing-3xl: 4.5rem;
+
+    /* Typography */
+    --font-size-base: 1rem;
+    --font-size-sm: 0.75rem;
+    --font-size-xs: 1.25rem;
+    --font-size-md: 1.5rem;
+    --font-size-lg: 2rem;
+    --font-size-xl: 2.25rem;
+    --line-height-base: 1.5;
+  }
+
+  /* Register your custom font family and tell the browser where to find it. */
+  @font-face {
+    font-family: "Sora";
+    src: url("/fonts/sora.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  /* Reset */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  /* Base styles */
+  body {
+    font-family: "Sora", serif;
+    font-size: var(--font-size-base);
+    font-weight: 400;
+    color: var(--font-color);
+    line-height: var(--line-height-base);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
 </style>

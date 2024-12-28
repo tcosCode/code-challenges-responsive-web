@@ -1,0 +1,98 @@
+:root {
+  /* Theme toggle colors */
+  --toggle-dark: #223344;
+  --toggle-light: #ffffff;
+
+  /* Sizes */
+  --toggle-width: 38px;
+  --toggle-height: 19px;
+  --toggle-circle-size: 16px;
+  --toggle-circle-margin: 2px;
+  --toggle-translate: -17px;
+
+  /* Timing */
+  --toggle-transition: 0.4s ease;
+}
+
+/* Toggle container */
+.toggle-theme-hamburguer {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-block-start: 4rem;
+}
+
+/* Hide checkbox */
+#toggle-checkbox-hamburguer {
+  display: none;
+}
+
+/* Toggle button base */
+#toggle-theme-hamburguer .button-theme-hamburguer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: var(--toggle-width);
+  height: var(--toggle-height);
+  background-color: var(--toggle-dark);
+  border-radius: calc(var(--toggle-height) / 2 + var(--toggle-circle-margin));
+  cursor: pointer;
+}
+
+/* Toggle circle */
+#toggle-theme-hamburguer .button-theme-hamburguer::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  width: var(--toggle-circle-size);
+  height: var(--toggle-circle-size);
+  background-color: var(--toggle-light);
+  border-radius: 50%;
+  margin: var(--toggle-circle-margin);
+  transition: transform var(--toggle-transition);
+}
+
+/* Icons */
+
+#toggle-theme-hamburguer .moon {
+  z-index: 1;
+}
+
+.button-theme-hamburguer .moon path {
+  fill: var(--toggle-light);
+  transition: fill var(--toggle-transition);
+}
+
+#toggle-theme-hamburguer .sun {
+  z-index: 1;
+}
+
+.sun circle,
+.sun path {
+  fill: var(--toggle-dark);
+  stroke: var(--toggle-dark);
+  transition: fill var(--toggle-transition), stroke var(--toggle-transition);
+}
+
+/* Checked state */
+#toggle-checkbox-hamburguer:checked + .button-theme-hamburguer::before {
+  transform: translateX(var(--toggle-translate));
+}
+
+#toggle-checkbox-hamburguer:checked + .button-theme-hamburguer .moon path {
+  fill: var(--toggle-dark);
+}
+
+#toggle-checkbox-hamburguer:checked + .button-theme-hamburguer .sun path,
+#toggle-checkbox-hamburguer:checked + .button-theme-hamburguer .sun circle {
+  fill: var(--toggle-light);
+  stroke: var(--toggle-light);
+}
+
+/* Optional: High contrast mode support */
+@media (prefers-contrast: high) {
+  :root {
+    --toggle-dark: #000000;
+    --toggle-light: #ffffff;
+  }
+}

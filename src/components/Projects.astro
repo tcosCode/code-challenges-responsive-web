@@ -1,0 +1,38 @@
+---
+import CardProject from "@components/CardProject.astro";
+import { PROJECTS } from "@src/data.js";
+
+interface Project {
+  id: number;
+  slug: string;
+  title: string;
+  description: string;
+  learnings: string[];
+}
+---
+
+<section>
+  <h1>PROJECTS</h1>
+  <div class="projects grid">
+    {
+      PROJECTS.toReversed().map((project: Project) => (
+        <CardProject {...project} />
+      ))
+    }
+  </div>
+</section>
+
+<style>
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+    color: var(--font-color-light);
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+</style>
