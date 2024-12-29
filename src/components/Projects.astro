@@ -3,22 +3,20 @@ import CardProject from "@components/CardProject.astro";
 import { PROJECTS } from "@src/data.js";
 
 interface Project {
-  id: number;
+  id: string;
   slug: string;
   title: string;
   description: string;
   learnings: string[];
 }
+
+const projectsReversed = [...PROJECTS].reverse();
 ---
 
 <section>
   <h1>PROJECTS</h1>
   <div class="projects grid">
-    {
-      PROJECTS.toReversed().map((project: Project) => (
-        <CardProject {...project} />
-      ))
-    }
+    {projectsReversed.map((project: Project) => <CardProject {...project} />)}
   </div>
 </section>
 
