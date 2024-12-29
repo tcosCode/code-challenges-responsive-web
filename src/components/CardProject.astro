@@ -15,35 +15,39 @@ const { project } = Astro.params;
 ---
 
 <article>
-  
-    <div class="card">
-      <h3>#{id.toString().padStart(2, "0")}</h3>
-
+  <div class="card">
+    <a href={`/${slug}`}>
       <img
+        class="card-image"
         src={`/projects/${id}.webp`}
         alt=`Image of the project ${title}`
         loading="lazy"
       />
+    </a>
+    <h3 class="card-number">#{id.toString().padStart(2, "0")}</h3>
 
-      <div class="card-details">
-        <a href=""> <h1>{title}</h1> </a>
-        <p>{description}</p>
-        <ul>
-          {learnings.map((learning) => <li>{learning}</li>)}
-        </ul>
-        <div class="buttons">
-          <a href={`github.com`}>
-            <img src={github.src} alt=`Github code for project ${title}` /> Code</a
-          >
-          <a href={`/${slug}`}
-            ><img
-              src={preview.src}
-              alt=`Github code for project ${title}`
-            />Demo</a
-          >
-        </div>
+    <div class="card-details">
+      <a href={`/${slug}`}> <h1>{title}</h1> </a>
+      <p>{description}</p>
+      <ul>
+        {learnings.map((learning) => <li>{learning}</li>)}
+      </ul>
+      <div class="buttons">
+        <a
+          href={`https://github.com/tcosCode/code-challenges-responsive-web/tree/main/public/challenges/${slug}`}
+          target="_blank"
+        >
+          <img src={github.src} alt=`Github code for project ${title}` /> Code</a
+        >
+        <a href={`/${slug}`}
+          ><img
+            src={preview.src}
+            alt=`Github code for project ${title}`
+          />Demo</a
+        >
       </div>
     </div>
+  </div>
 
   <style>
     .card {
@@ -51,7 +55,7 @@ const { project } = Astro.params;
       margin-top: var(--spacing-md);
     }
 
-    h3 {
+    .card-number {
       position: absolute;
       top: 0.4rem;
       left: 0.5rem;
@@ -63,7 +67,7 @@ const { project } = Astro.params;
       z-index: 10;
     }
 
-    .card > img {
+    .card-image {
       border-radius: 1rem;
       width: 100%;
       height: auto;
@@ -71,13 +75,12 @@ const { project } = Astro.params;
       cursor: pointer;
       aspect-ratio: 12/9;
     }
-
-    .card:hover h3 {
-      transform: scale(1.3);
+    .card-image:hover {
+      filter: drop-shadow(0 0 0.5rem var(--primary-color));
     }
 
-    .card > img:hover {
-      filter: drop-shadow(0 0 0.5rem var(--primary-color));
+    .card > a:hover + .card-number {
+      transform: scale(1.3);
     }
 
     .card-details {
