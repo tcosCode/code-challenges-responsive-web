@@ -1,38 +1,40 @@
-# Astro Starter Kit: Basics
+# 🚀 CSS & HTML Responsive Layout Challenges
+
+![Project Screenshot](https://github.com/tcosCode/code-challenges-responsive-web/blob/main/public/project-capture.webp)
+
+Welcome to **CSS & HTML Responsive Layout Challenges**, a personal project showcasing my skills in layout design using CSS and HTML. This repository contains various layout challenges that I've made, each demonstrating different aspects of front-end development.
+
+## 📚 Table of Contents
+
+- [Description](#description)
+- [Technologies](#technologies)
+- [Installation](#installation)
+
+## Description
+
+This project is a collection of layout challenges I have made to hone my skills in front-end development. Each challenge is featured on a landing page or a component, showcasing my abilities in HTML and CSS. This serves as a part of my portfolio, evidencing my proficiency in creating responsive and visually appealing web layouts.
+
+## Technologies
+
+- [Astro 5](https://astro.build)
+
+## Installation
+
+To clone and set up this project locally, follow these steps:
+
+Clone the project to your local machine:
 
 ```sh
-npm create astro@latest -- --template basics
+git clone https://github.com/tcosCode/code-challenges-responsive-web.git
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+Change the working directory:
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
+```sh
+cd code-challenges-responsive-web
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
+Run the commands from the root of the project:
 
 | Command                   | Action                                           |
 | :------------------------ | :----------------------------------------------- |
@@ -42,7 +44,3 @@ All commands are run from the root of the project, from a terminal:
 | `npm run preview`         | Preview your build locally, before deploying     |
 | `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
